@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title>Main</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body>
+     <div id ='devId' >
+        <h1><%=devId%> admin page</h1>
+    </div>
+
+    <div id = 'inputLayout'>
+    <form action = '/add', method = 'get'>
+       <h3>Add Transaction</h3><br>
+       txType  : <select name="txType" style="margin : 10px">
+        <option value="1">operation</option>
+        <option value="2">access</option>
+        <option value="3">monitor</option>
+        <option value="4">remove</option>
+      </select> <br>
+       trgORop : <input type = 'text' name = 'trgORop' style="margin : 10px"> <br>
+       content : <input type = 'text' name = 'content' style="margin : 10px"> <br>
+       <input type = 'submit' value="add transaction" style="margin : 10px">
+    </form>
+
+   </div>
+   <div id = 'outputLayout'>
+    <% for(var i=0; i < oplist.length; i++) { %>
+      <li>
+              <a href = '/sendTx?txType=<%=oplist[i].txType%>&amp;trgORop=<%=oplist[i].trgORop%>&amp;content=<%=oplist[i].content%>'>
+              registered transactiontx <%= i %> -- Type : <%= oplist[i].txType %> trgORop : <%= oplist[i].trgORop %> content :<%=oplist[i].content %>
+              </a>
+      </li>
+  <% } %>
+  </div>
+
+  <div id = 'deleteLayout'>
+    <h3>delete Transaction</h3>
+    <form action = '/delete' , method = 'get'>
+      <h4>choose index for delete transaction</h4><br>
+      index : <input type = "text" name ="index" style="margin : 10px"/>
+      <br><input type = 'submit' value = 'delete transaction' style="margin : 10px"/>
+    </form>
+  <div>
+  </body>
+</html>

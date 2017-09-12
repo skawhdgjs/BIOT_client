@@ -1,0 +1,5 @@
+{
+  "Id" : "client1",
+  "server" : "http://localhost:4001",
+  "webSocket" : 3093
+}

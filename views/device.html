@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>TestDemo</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+
+      <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body>
+
+
+
+
+
+
+<header>
+  <div id ='devId' style="text-align: center;width:100%;">
+    <h1><%=devId%> admin page</h1>
+  </div>
+</header>
+
+
+<div class="card">
+
+
+
+  <div class="blog-card1 spring-fever">
+    <div class="title-content">
+        <h3>Add Transaction</h3>
+        <hr />
+
+    </div><!-- /.title-content -->
+    <form action = '/add', method ='get'>
+    <div class="card-info">
+        txType  : <select name="txType" style="margin : 10px">
+        <option value="1">operation</option>
+        <option value="2">access</option>
+        <option value="3">monitor</option>
+        <option value="4">remove</option>
+    </select> <br>
+        trgORop : <input type = 'text' name = 'trgORop' style="margin : 10px"> <br>
+        content : <input type = 'text' name = 'content' style="margin : 10px"> <br>
+        <input type = 'submit' value="add transaction" style="margin : 10px;padding: 15px;border-radius: 3px;">
+    </div><!-- /.card-info -->
+    <!--<div class="utility-info">-->
+        <!--<ul class="utility-list">-->
+            <!--<li class="comments">12</li>-->
+            <!--<li class="date">03.12.2015</li>-->
+        <!--</ul>-->
+    <!--</div>&lt;!&ndash; /.utility-info &ndash;&gt;-->
+     <!--overlays-->
+   </form>
+    <div class="gradient-overlay"></div>
+    <div class="color-overlay"></div>
+  </div><!-- /.blog-card -->
+
+
+
+
+
+
+
+
+
+    <div class="blog-card2 spring-fever">
+    <div class="title-content">
+        <h3>Delete Transaction</h3>
+        <hr />
+        <div class="intro">choose index for delete transaction</div>
+    </div><!-- /.title-content -->
+    <form action = '/delete', method = 'get'>
+    <div class="card-info">
+        <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.-->
+        index : <input type = "text" name ="index" style="margin : 10px"/>
+        <br><input type = 'submit' value = 'delete transaction' style="margin : 10px;padding: 15px;border-radius: 3px;"/>
+    </div><!-- /.card-info -->
+    <!--<div class="utility-info">-->
+    <!--<ul class="utility-list">-->
+    <!--<li class="comments">12</li>-->
+    <!--<li class="date">03.12.2015</li>-->
+    <!--</ul>-->
+    <!--</div>&lt;!&ndash; /.utility-info &ndash;&gt;-->
+    <!-- overlays -->
+    </form>
+    <div class="gradient-overlay"></div>
+    <div class="color-overlay"></div>
+    </div><!-- /.blog-card -->
+
+
+
+
+
+
+
+
+
+
+    <div class="blog-card3 spring-fever">
+    <div class="title-content">
+        <h3>Transaction</h3>
+        <hr />
+        <div class="intro">registered transactions</div>
+        <!--<div class="intro">Yllamco laboris nisi ut aliquip ex ea commodo.</div>-->
+    </div><!-- /.title-content -->
+    <div class="card-info">
+        <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.-->
+        <% for(var i=0; i < oplist.length; i++) { %>
+        <li>
+            <a href = '/sendTx?txType=<%=oplist[i].txType%>&amp;trgORop=<%=oplist[i].trgORop%>&amp;content=<%=oplist[i].content%>'>
+              <% var ops
+                if (oplist[i].txType == 1)
+                  ops = 'operation'
+                if (oplist[i].txType == 2)
+                  ops = 'access'
+                if (oplist[i].txType == 3)
+                  ops = 'monitor'
+                if (oplist[i].txType == 4)
+                  ops = 'delete'
+              %>
+
+              Tx <%= i %>  - Type : <%=  ops %>  trgORop :   <%= oplist[i].trgORop %> content :<%=oplist[i].content %>
+
+
+
+            </a>
+        </li>
+        <% } %>
+    </div><!-- /.card-info -->
+    <!--<div class="utility-info">-->
+        <!--<ul class="utility-list">-->
+            <!--<li class="comments">12</li>-->
+            <!--<li class="date">03.12.2015</li>-->
+        <!--</ul>-->
+    <!--</div>&lt;!&ndash; /.utility-info &ndash;&gt;-->
+    <!-- overlays -->
+    <div class="gradient-overlay"></div>
+    <div class="color-overlay"></div>
+    </div><!-- /.blog-card -->
+
+    <script src="js/index.js"></script>
+
+
+</div>
+
+
+
+<!--<footer>-->
+    <!--<div style="text-align:center;width:100%; ">-->
+        <!--Copyright &copy; Soongsil Univ.-->
+    <!--</div>-->
+<!--</footer>-->
+
+
+
+</body>
+</html>
