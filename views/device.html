@@ -1,162 +1,112 @@
-<!DOCTYPE html>
-<html >
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>TestDemo</title>
+    <title>Blockchain Admin Page</title>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-
-
-      <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
+    <link rel="stylesheet" type="text/css" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+
+    </script>
 </head>
-
 <body>
-
-
-
-
-
-
 <header>
-  <div id ='devId' style="text-align: center;width:100%;">
-    <h1><%=devId%> admin page</h1>
-  </div>
+    <h2 align = "center" ><%=devId%> admin page</h2>
 </header>
 
+<div id = 'navigator' class = "w3-bar w3-indigo w3-hover-shadow">
+    <a href='/' class="w3-bar-item w3-button w3-right w3-margin-right">HOME</a>
+</div>
 
-<div class="card">
 
+<div id = 'outer'>
 
+    <div id ='addOuterPolicy' class = 'w3-card-4' style="margin-top:1%;display:inline-block;width:46%;margin-left:3%;">
+        <div class="w3-container w3-blue w3-hover-shadow" >
+            <h3>Add Transaction</h3>
+        </div>
 
-  <div class="blog-card1 spring-fever">
-    <div class="title-content">
-        <h3>Add Transaction</h3>
-        <hr />
-
-    </div><!-- /.title-content -->
-    <form action = '/add', method ='get'>
-    <div class="card-info">
-        txType  : <select name="txType" style="margin : 10px">
-        <option value="1">operation</option>
-        <option value="2">access</option>
-        <option value="3">monitor</option>
-        <option value="4">remove</option>
-    </select> <br>
-        trgORop : <input type = 'text' name = 'trgORop' style="margin : 10px"> <br>
-        content : <input type = 'text' name = 'content' style="margin : 10px"> <br>
-        <input type = 'submit' value="add transaction" style="margin : 10px;padding: 15px;border-radius: 3px;">
-    </div><!-- /.card-info -->
-    <!--<div class="utility-info">-->
-        <!--<ul class="utility-list">-->
-            <!--<li class="comments">12</li>-->
-            <!--<li class="date">03.12.2015</li>-->
-        <!--</ul>-->
-    <!--</div>&lt;!&ndash; /.utility-info &ndash;&gt;-->
-     <!--overlays-->
-   </form>
-    <div class="gradient-overlay"></div>
-    <div class="color-overlay"></div>
-  </div><!-- /.blog-card -->
+        <form action = "/add" mehtod = 'get'>
+            <div style="margin-left:3%;margin-top:1%;margin-bottom: 1%;">
+                <p>
+                txType  : <select name="txType" style="margin : 10px">
+                <option value="1">operation</option>
+                <option value="2">access</option>
+                <option value="3">monitor</option>
+                <option value="4">remove</option>
+            </select> <br>
+                trgORop : <input type = 'text' name = 'trgORop' style="margin : 10px"> <br>
+                content : <input type = 'text' name = 'content' style="margin : 10px"> <br>
+                </p>
+                <p>
+                    <input type = 'submit' value="add transaction" class="w3-round w3-hover-shadow" style="margin : 10px;padding: 15px;"></p>
+            </div>
+        </form>
+    </div>
 
 
 
 
+    <div id ='deleteOuterPolicy' class = 'w3-card-4' style="margin-top:1%;display:inline-block;width:46%;margin-left:2%;">
+        <div class="w3-container w3-blue w3-hover-shadow" >
+            <h3>Delete Transaction</h3>
+        </div>
 
-
-
-
-
-    <div class="blog-card2 spring-fever">
-    <div class="title-content">
-        <h3>Delete Transaction</h3>
-        <hr />
-        <div class="intro">choose index for delete transaction</div>
-    </div><!-- /.title-content -->
-    <form action = '/delete', method = 'get'>
-    <div class="card-info">
-        <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.-->
-        index : <input type = "text" name ="index" style="margin : 10px"/>
-        <br><input type = 'submit' value = 'delete transaction' style="margin : 10px;padding: 15px;border-radius: 3px;"/>
-    </div><!-- /.card-info -->
-    <!--<div class="utility-info">-->
-    <!--<ul class="utility-list">-->
-    <!--<li class="comments">12</li>-->
-    <!--<li class="date">03.12.2015</li>-->
-    <!--</ul>-->
-    <!--</div>&lt;!&ndash; /.utility-info &ndash;&gt;-->
-    <!-- overlays -->
-    </form>
-    <div class="gradient-overlay"></div>
-    <div class="color-overlay"></div>
-    </div><!-- /.blog-card -->
-
-
-
-
-
-
-
-
-
-
-    <div class="blog-card3 spring-fever">
-    <div class="title-content">
-        <h3>Transaction</h3>
-        <hr />
-        <div class="intro">registered transactions</div>
-        <!--<div class="intro">Yllamco laboris nisi ut aliquip ex ea commodo.</div>-->
-    </div><!-- /.title-content -->
-    <div class="card-info">
-        <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.-->
-        <% for(var i=0; i < oplist.length; i++) { %>
-        <li>
-            <a href = '/sendTx?txType=<%=oplist[i].txType%>&amp;trgORop=<%=oplist[i].trgORop%>&amp;content=<%=oplist[i].content%>'>
-              <% var ops
-                if (oplist[i].txType == 1)
-                  ops = 'operation'
-                if (oplist[i].txType == 2)
-                  ops = 'access'
-                if (oplist[i].txType == 3)
-                  ops = 'monitor'
-                if (oplist[i].txType == 4)
-                  ops = 'delete'
-              %>
-
-              Tx <%= i %>  - Type : <%=  ops %>  trgORop :   <%= oplist[i].trgORop %> content :<%=oplist[i].content %>
-
-
-
-            </a>
-        </li>
-        <% } %>
-    </div><!-- /.card-info -->
-    <!--<div class="utility-info">-->
-        <!--<ul class="utility-list">-->
-            <!--<li class="comments">12</li>-->
-            <!--<li class="date">03.12.2015</li>-->
-        <!--</ul>-->
-    <!--</div>&lt;!&ndash; /.utility-info &ndash;&gt;-->
-    <!-- overlays -->
-    <div class="gradient-overlay"></div>
-    <div class="color-overlay"></div>
-    </div><!-- /.blog-card -->
-
-    <script src="js/index.js"></script>
-
+        <form action = "/delete" mehtod = 'get'>
+            <div style="margin-left:3%;margin-top:1%;margin-bottom: 1%;">
+                <br>
+                choose index for delete transaction<br><br>
+                index : <input type = "text" name ="index" style="margin : 10px"/>
+                <br><input type = 'submit' value = 'delete transaction' class="w3-round w3-hover-shadow" style="margin : 10px;padding: 15px;"/>
+            </div>
+        </form>
+    </div>
 
 </div>
 
 
 
-<!--<footer>-->
-    <!--<div style="text-align:center;width:100%; ">-->
-        <!--Copyright &copy; Soongsil Univ.-->
-    <!--</div>-->
-<!--</footer>-->
 
 
+
+
+
+
+
+
+<div id = 'verify' class = 'w3-card-4' style="margin-top:1%;margin-left:3%;width:95%;">
+    <div class="w3-container w3-light-blue w3-hover-shadow" >
+        <h3>Result</h3>
+    </div>
+    <form action ="/verify" method="get">
+        <div style="margin-left:3%;margin-top:1%;margin-bottom: 1%;">
+            <% for(var i=0; i < oplist.length; i++) { %>
+            <li>
+                <a href = '/sendTx?txType=<%=oplist[i].txType%>&amp;trgORop=<%=oplist[i].trgORop%>&amp;content=<%=oplist[i].content%>'>
+                    Index <%= i %> [ Type :
+                    <% if (oplist[i].txType ==1) { %>
+                        operation
+                    <% } else if (oplist[i].txType == 2) { %>
+                        access
+                    <% } else if( oplist[i].txType == 3) { %>
+                        monitor
+                    <% } else if ( oplist[i].txType == 4) { %>
+                        remove
+                    <% } %>
+                    ] [trgORop : <%= oplist[i].trgORop %>] [content :<%=oplist[i].content %>] [status : <%= opresult[i] %>]
+                </a>
+            </li>
+            <% } %>
+        </div>
+    </form>
+</div>
+
+
+<footer class = "w3-padding w3-display-bottom w3-center" style = "background: #aaa;color:white;">
+    <br> Copyright &copy; Soongsil Univ.</footer>
 
 </body>
 </html>

@@ -18,12 +18,13 @@ body {
 
 
 
+
 .blog-card1 {
-  width: 250px;
+  width: 350px;
   height: 500px;
   /*position: absolute;*/
   top: 50%;
-  left: 3%;
+  left: 5%;
   margin: 0px 0 0 0px;
   /*overflow: hidden;*/
   border-radius: 10px;
@@ -38,7 +39,6 @@ body {
 
   display:inline-block;
 
-
 }
 .blog-card1.spring-fever {
   background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/barbarian-bg.jpg') repeat;
@@ -46,7 +46,7 @@ body {
 .blog-card1 .color-overlay {
   /* Rectangle 11: */
   background: rgba(84, 104, 110, 0.4);
-  width: 250px;
+  width: 350px;
   height: 500px;
   position: absolute;
   z-index: 10;
@@ -70,7 +70,7 @@ body {
 /*}*/
 .blog-card1:hover .card-info {
   opacity: 1;
-  bottom: 50px;
+  bottom: 120px;
 }
 .blog-card1:hover .color-overlay {
   background: rgba(84, 104, 110, 0.8);
@@ -83,12 +83,14 @@ body {
 
 
 
+
+
 .blog-card2 {
-  width: 250px;
+  width: 350px;
   height: 500px;
   /*position: absolute;*/
   top: 50%;
-  left: 6%;
+  left: 7%;
   margin: 0px 0 0 0px;
   /*overflow: hidden;*/
   border-radius: 10px;
@@ -110,7 +112,7 @@ body {
 .blog-card2 .color-overlay {
   /* Rectangle 11: */
   background: rgba(84, 104, 110, 0.4);
-  width: 250px;
+  width: 350px;
   height: 500px;
   position: absolute;
   z-index: 10;
@@ -132,16 +134,13 @@ body {
   /*left: 0;*/
   /*z-index: 15;*/
 /*}*/
-
 .blog-card2:hover .card-info {
   opacity: 1;
   bottom: 120px;
 }
-
-
-/*.blog-card2:hover .color-overlay {*/
-  /*background: rgba(84, 104, 110, 0.8);*/
-/*}*/
+.blog-card2:hover .color-overlay {
+  background: rgba(84, 104, 110, 0.8);
+}
 
 
 
@@ -153,7 +152,7 @@ body {
 
 
 .blog-card3 {
-  width: 600px;
+  width: 350px;
   height: 500px;
   /*position: absolute;*/
   top: 50%;
@@ -179,7 +178,7 @@ body {
 .blog-card3 .color-overlay {
   /* Rectangle 11: */
   background: rgba(84, 104, 110, 0.4);
-  width: 600px;
+  width: 350px;
   height: 500px;
   position: absolute;
   z-index: 10;
@@ -202,16 +201,10 @@ body {
   /*left: 0;*/
   /*z-index: 15;*/
 /*}*/
-
-.blog-card3 .card-info {
+.blog-card3:hover .card-info {
   opacity: 1;
   bottom: 120px;
 }
-
-/*.blog-card3:hover .card-info {*/
-  /*opacity: 1;*/
-  /*bottom: 120px;*/
-/*}*/
 .blog-card3:hover .color-overlay {
   background: rgba(84, 104, 110, 0.8);
 }
