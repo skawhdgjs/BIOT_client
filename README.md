@@ -5,24 +5,20 @@ IoT devices are decentralized, scalable, low power so It is hard to apply
 security method which used in now. Since , centralized and demend high power
 So, This project aim to make security system fit in IoT Network
 
-###about this project
- IoT security system base on blockchain and vpn.
-This project is compose of server and client.
-Client play role like node or device.
-First, connect to vpn network and then server(=block server)
-Second, client just register transaction and send transaction to server
+### about this project
+ **IoT security system base on blockchain and vpn**. This project is compose of server and client. Client play role like node or device. First, connect to vpn network and then server(=block server)Second, client just register transaction and send transaction to server
 
-###feature
+### feature
+
+- light security system
 
 
-
-
-###dependency
+### dependency
 
 **openVPN**
 
 
-###Installation
+### Installation
 
     git clone https://github.com/skawhdgjs/BIOT_client.git
 
@@ -39,14 +35,14 @@ webSocket     | web page port what for command
 
 
 
-###start
+### start
 
 	npm start
 
 
 
 
-###commnad
+### commnad
 
 **addTransaction**
 
@@ -57,7 +53,7 @@ register Transaction
 delete Transaction
 
 
-###contributor
+### contributor
 
 Nam Jong Heon skawhdgjs@naver.com
 Jong Dong won dongwonism@naver.com
