@@ -13,7 +13,7 @@
     "security"
   ],
   "author": "namjongheon",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "body-parser": "^1.17.2",
     "ejs": "^2.5.7",
