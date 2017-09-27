@@ -18,9 +18,29 @@ So, This project aim to make security system fit in IoT Network
  - Transaction protection using user's public key
  - All data safely store in blockchain
 
-### dependency
+### Before start 
+ 
+#### Install openVPN
 
-**openVPN**
+- ubuntu
+
+
+    apt-get install openvpn
+    
+    
+- mac osx
+
+
+    brew openvpn
+    
+	
+#### Setting and start openVPN
+
+- follow this guide
+
+https://www.digitalocean.com/community/tutorials/how-to-set-up-an-openvpn-server-on-ubuntu-16-04
+
+
 
 
 ### Installation
